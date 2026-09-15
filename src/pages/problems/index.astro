@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/Base.astro'; import {problems} from '../../data/content';
+---
+<Base title="문제 해결 — Garden"><p class="eyebrow">Problem Solver</p><h1>증상을 읽는 법</h1><p class="lede">한 가지 원인으로 단정하지 않고, 확인 가능한 단서부터 좁혀갑니다.</p><div class="grid">{problems.map(([slug,title])=><article class="specimen"><p class="meta">SYMPTOM</p><h2><a href={`/problems/${slug}/`}>{title}</a></h2><p>증상, 가능한 원인, 확인 방법, 즉시 할 일을 차례로 봅니다.</p></article>)}</div></Base>

@@ -1,0 +1,4 @@
+---
+import Base from '../layouts/Base.astro'; import {plants} from '../data/plants';
+---
+<Base title="Garden — 식물 관리 도감"><section class="hero"><p class="eyebrow">A Botanical Journal by EMFLS</p><h1>식물을 읽고,<br><i>돌보는 법</i>을 찾다.</h1><p class="lede">빛과 물, 흙과 계절을 관찰해 식물마다 다른 관리 결정을 돕는 실내식물 도감입니다.</p><a class="button" href="/plants/">도감 펼쳐보기 →</a></section><section><p class="eyebrow">Specimens / 01</p><h2>처음 만나는 식물</h2><div class="grid">{plants.slice(0,4).map((plant)=><article class="specimen"><p class="meta">{plant.difficulty} · {plant.light}</p><h3><a href={`/plants/${plant.slug}/`}>{plant.nameKo}</a></h3><p><i>{plant.scientificName}</i></p><p>{plant.environment}</p></article>)}</div></section><section><p class="eyebrow">Tools</p><h2>조건에 맞는 판단 도구</h2><p>식물 선택은 환경에서, 물주기는 흙 상태에서 시작합니다.</p><a class="button" href="/tools/plant-finder/">Plant Finder</a> <a class="button" href="/tools/watering-guide/">Watering Guide</a></section></Base>

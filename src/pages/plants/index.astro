@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/Base.astro'; import {plants} from '../../data/plants';
+---
+<Base title="식물 도감 — Garden"><p class="eyebrow">Plant Encyclopedia</p><h1>식물 도감</h1><p class="lede">초보자가 자주 만나는 실내 관엽식물을 관리 조건과 함께 기록합니다.</p><div class="grid">{plants.map((plant)=><article class="specimen"><p class="meta">{plant.difficulty} · {plant.light}</p><h2><a href={`/plants/${plant.slug}/`}>{plant.nameKo}</a></h2><p><i>{plant.scientificName}</i><br>{plant.watering}</p></article>)}</div></Base>

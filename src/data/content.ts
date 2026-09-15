@@ -1,0 +1,2 @@
+export const guides=[['watering','물주기 판단법','달력보다 흙의 현재 상태를 먼저 확인하는 순서'],['light','빛 조건 읽는 법','창문 방향과 그림자로 광량을 관찰하는 방법'],['soil-drainage','배수와 흙','뿌리에 공기가 머무는 흙과 화분 고르기'],['repotting','분갈이 시점','뿌리와 흙의 신호로 시기를 판단하기'],['yellow-brown-leaves','잎 황변과 갈변','증상을 단일 원인으로 단정하지 않는 관찰법'],['propagation','번식 기본 원칙','마디와 생장점을 확인하는 안전한 시작']];
+export const problems=[['yellow-leaves','잎이 노랗게 변함'],['brown-tips','잎끝이 갈색으로 변함'],['drooping','잎과 줄기가 축 처짐'],['root-rot','과습 또는 뿌리 문제 의심']];

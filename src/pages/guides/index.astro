@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/Base.astro'; import {guides} from '../../data/content';
+---
+<Base title="관리 가이드 — Garden"><p class="eyebrow">Care Guides</p><h1>관찰에서 시작하는 관리</h1><div class="grid">{guides.map(([slug,title,desc])=><article class="specimen"><p class="meta">GUIDE</p><h2><a href={`/guides/${slug}/`}>{title}</a></h2><p>{desc}</p></article>)}</div></Base>
