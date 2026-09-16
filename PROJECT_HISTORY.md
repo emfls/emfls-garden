@@ -39,3 +39,19 @@
 - Code QA: 기존 기준 `npm run check` PASS (0 errors, 2 non-blocking Astro hints), `npm run build` PASS (29 static pages).
 - Blockers: 명시적 viewport별 screenshot 미완료; Search Launch 외부 등록/제출 미완료; 관제 리뷰 전이 대기.
 - Next Action: viewport 캡처 가능한 브라우저 환경에서 Visual Snapshot 최소 세트를 완성하고, 실제 외부 발급값이 생길 때만 Registry를 갱신한 뒤 `READY_FOR_REVIEW`를 검토.
+
+## 2026-09-16 — Final Playwright Visual Review Gate evidence sync
+
+- Objective: 관제 리뷰의 `CHANGES_REQUESTED`에 따라 이미 통과한 Visual QA 결과를 Repo history, checklist, tasks, screenshot evidence와 정합화.
+- QA environment: Playwright 1.63.0 + Chromium, Production `https://garden.emfls.com/`.
+- Base commit: `8bef4be4384843f76a565219450dcc794aa0872d`.
+- Viewports: 320×1000, 360×1000, 375×1000, 390×1000, 1440×1000.
+- Pages: `/`, `/plants/`, `/plants/pothos/`, `/guides/watering/`, `/tools/plant-finder/`, `/tools/watering-guide/`.
+- Result: 총 30개 조합 모두 HTTP 200. 모든 viewport에서 `scrollWidth == clientWidth`, overflow element 0, navigation clipping 0, hero clipping 0, heading/text clipping 0, specimen layout clipping 0, form control viewport escape 0.
+- Interaction: Plant Finder PASS, Watering Guide PASS, keyboard Tab PASS, skip link focus PASS, reduced-motion/accessibility 유지.
+- Code QA: `npm run check` PASS (0 errors, 2 non-blocking Astro hints), `npm run build` PASS (29 pages).
+- Code changes: 로직 변경 없음. Review evidence를 `docs/review/`에 영속 저장하고 checklist/tasks/history만 갱신.
+- Screenshot evidence: `docs/review/home-desktop.png`, `home-390.png`, `plants-desktop.png`, `plant-detail-desktop.png`, `guide-desktop.png`, `plant-finder-desktop.png`, `watering-guide-desktop.png`. 각 파일은 Production URL, viewport, 환경, base commit, capture date 2026-09-16을 이 기록과 함께 관리한다.
+- Known Issues: Search Launch / GA4 / AdSense 외부 등록값은 여전히 `NOT_SET`; Visual Review blocker는 해소.
+- Assessment: `READY_FOR_REVIEW`.
+- Next Action: Control Tower visual/launch review.

@@ -17,6 +17,7 @@
 
 ## Pending / Blocked
 - [x] `garden.emfls.com` Cloudflare Pages custom domain active 및 브라우저 핵심 경로 QA
-- [ ] 320/360/375/390/desktop 명시적 viewport별 Visual QA screenshots
+- [x] 320/360/375/390/desktop 명시적 viewport별 Visual QA screenshots
+- [x] Review Snapshot evidence를 `docs/review/`에 영속 저장
 - [x] Notion Work History와 Garden Site Status Sync 원본 행 갱신
 - [ ] 전용 GA4/Search/AdSense 발급값 확인 후 선택 적용
