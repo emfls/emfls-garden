@@ -24,3 +24,18 @@
 - Visual snapshot: Homepage Production mobile 캡처 완료. 320/360/375/390/desktop의 명시적 viewport별 캡처는 브라우저 연결 제약으로 미완료.
 - Analytics: Garden 전용 GA4 ID 없음. Google Search/Naver/AdSense 실제 발급값 없음. 모두 Pending이며 placeholder 미삽입.
 - Assessment: custom domain과 명시적 viewport Visual QA가 남아 `READY_FOR_REVIEW` 아님.
+
+## 2026-09-16 — 운영체계 재동기화 / custom domain QA
+
+- Objective: 최신 Notion 운영체계 기준으로 Garden P3 Launch Gate와 Review 준비 상태를 재확인하고 상태 드리프트를 제거.
+- Source check: 관제탑 → Garden → Site Status Sync/Registry → Baseline → Network QA → Automation Protocol → Master Plan → Repo 문서 순서로 확인. 다른 EMFLS 프로젝트는 범위에서 제외.
+- Cloudflare: `emfls-garden`은 GitHub `emfls/emfls-garden`, production branch `main`, `npm run build`, output `dist`로 연결됨. 최신 deployment `466c709b` 성공.
+- Domain: Cloudflare Pages API에서 `garden.emfls.com`이 `active`/HTTP validation active로 전환되었고, 브라우저에서 custom domain Homepage와 핵심 경로가 정상 렌더링됨.
+- Live QA: Homepage, Plant List, Plant Detail, Guide, Plant Finder, Watering Guide, 404의 custom-domain 접근성 트리를 확인. `/robots.txt`는 브라우저 제어기의 client block으로 직접 읽지 못했으므로 이전 HTTP 증거와 구분해 기록.
+- Accessibility/UX: skip link, semantic navigation, visible focus styling, form labels/controls, reduced-motion CSS, keyboard-focusable controls 확인. Garden botanical editorial hierarchy와 no-image specimen layout 유지.
+- Visual QA/Screenshots: custom-domain Homepage desktop snapshot을 캡처했고, 기존 Production mobile Homepage 및 대표 List/Detail/Finder/Watering 확인 기록을 유지. 320/360/375/390 명시적 viewport별 screenshot gate는 미완료.
+- Assets: 사실성 있는 식물 사진을 임의 추가하지 않음. 현재 Plant data/specimen editorial layout에는 이미지가 필수 아님. AI image generation 또는 외부 이미지 asset은 사용하지 않음.
+- Search/Analytics: Garden 전용 GA4, Google/Naver/Daum Search 및 sitemap 제출, IndexNow, AdSense 실제 근거 없음. placeholder를 넣지 않음.
+- Code QA: 기존 기준 `npm run check` PASS (0 errors, 2 non-blocking Astro hints), `npm run build` PASS (29 static pages).
+- Blockers: 명시적 viewport별 screenshot 미완료; Search Launch 외부 등록/제출 미완료; 관제 리뷰 전이 대기.
+- Next Action: viewport 캡처 가능한 브라우저 환경에서 Visual Snapshot 최소 세트를 완성하고, 실제 외부 발급값이 생길 때만 Registry를 갱신한 뒤 `READY_FOR_REVIEW`를 검토.

@@ -16,7 +16,7 @@
 - [x] Finder/Watering Guide 브라우저 기능 QA
 
 ## Pending / Blocked
-- [ ] `garden.emfls.com` DNS/Pages verification: Cloudflare `CNAME record not set`, custom URL 522
+- [x] `garden.emfls.com` Cloudflare Pages custom domain active 및 브라우저 핵심 경로 QA
 - [ ] 320/360/375/390/desktop 명시적 viewport별 Visual QA screenshots
-- [ ] Notion Work Report와 Site Registry QA 값 갱신
+- [x] Notion Work History와 Garden Site Status Sync 원본 행 갱신
 - [ ] 전용 GA4/Search/AdSense 발급값 확인 후 선택 적용
